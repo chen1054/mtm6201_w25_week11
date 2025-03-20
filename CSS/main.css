@@ -1,0 +1,65 @@
+body {
+    font-size: 16px;
+}
+.box{
+    padding: 20px;
+    margin: 10px;
+}
+
+.px-query {
+    background-color: cadetblue;
+    color:aliceblue
+}
+
+.em-query{
+    background-color: brown;
+    color: aliceblue;
+
+}
+
+@media screen and (max-width:600px) {
+    .px-query{
+        display: none;
+    }
+}
+
+/* 600px/16=37.5em */
+/* if font from user setting is bigger that means 600/20=30em */
+@media screen and (max-width:37em) {
+    .em-query{
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: rgb(7,7,7);
+        color: aliceblue;
+    }
+}
+
+@media (hover:hover) {
+    .hover-query::after{
+        content:"(Your device support hover)";
+        color:green;
+    }
+}
+
+@media (hover:none) {
+    .hover-query::after{
+        content:"(Your device support hover)";
+        color:red;
+    }
+}
+
+@media (orientation:potrait) {
+    .orientation::after{
+        content: "Potrait Mode";
+    }
+}
+
+@media (orientation:lanscape) {
+    .orientation::after{
+        content: "Lanscape Mode";
+    }
+}
